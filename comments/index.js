@@ -27,7 +27,7 @@ app.post('/posts/:id/comments', async (req, res) => {
     })
     commentsByPostId[req.params.id] = comments;
 
-    await axios.post('http://192.168.56.1:8088/events', {
+    await axios.post('http://event-bus-srv-clusterip:8088/events', {
         type: 'CommentCreated',
         data: {
             id: commentId,
@@ -48,7 +48,7 @@ app.post('/events', async (req, res) => {
         const comment = comments.find(comment => comment.id === id);
         comment.status = status;
 
-        await axios.post('http://localhost:8088/events', {
+        await axios.post('http://event-bus-srv-clusterip:8088/events', {
             type: 'CommentUpdated',
             data: {
                 id,

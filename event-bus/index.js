@@ -14,19 +14,19 @@ app.post('/events', (req, res) => {
 
     events.push(event);
 
-    axios.post('http://localhost:8080/events', event) // posts
+    axios.post('http://posts-srv-clusterip:8080/events', event) // posts
         .catch((err) => {
             console.log('Error-Posts')
         });
-    axios.post('http://localhost:8081/events', event) // comments
+    axios.post('http://comments-srv-clusterip:8081/events', event) // comments
         .catch((err) => {
             console.log('Error-Comments');
         })
-    axios.post('http://localhost:8082/events', event) // query
+    axios.post('http://query-srv-clusterip:8082/events', event) // query
         .catch((err) => {
             console.log('Error-Query');
         })
-    axios.post('http://localhost:8083/events', event) // moderation
+    axios.post('http://moderation-srv-clusterip:8083/events', event) // moderation
         .catch((err) => {
             console.log('Error-Moderation');
         })

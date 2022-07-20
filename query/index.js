@@ -47,7 +47,7 @@ app.post('/events', (req, res) => {
 app.listen(port, async () => {
     console.log(`Posts listening at http://localhost:${port}`);
 
-    const res = await axios.get('http://localhost:8088/events');
+    const res = await axios.get('http://event-bus-srv-clusterip:8088/events');
     for (let event of res.data) {
         console.log('Processing event: ', event.type);
         handleEvent(event.type, event.data);
