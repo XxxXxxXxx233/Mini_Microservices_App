@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: moderation
-          image: xxxxxxxxx233/mini:moderation
+          image: xxxxxxxxx233/moderation
 ---
 apiVersion: v1
 kind: Service

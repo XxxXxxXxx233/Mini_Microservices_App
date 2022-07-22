@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: client
-          image: xxxxxxxxx233/mini:client
+          image: xxxxxxxxx233/client
 ---
 apiVersion: v1
 kind: Service

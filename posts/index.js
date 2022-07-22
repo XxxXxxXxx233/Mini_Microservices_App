@@ -23,7 +23,7 @@ app.post('/posts/create', async (req, res) => {
         id,
         title
     }
-    console.log("Receive post!!!");
+    
     await axios.post('http://event-bus-srv-clusterip:8088/events', {
         type: 'PostCreated',
         data: {

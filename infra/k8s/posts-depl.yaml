@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: posts
-          image: xxxxxxxxx233/mini:posts
+          image: xxxxxxxxx233/posts
 ---
 apiVersion: v1
 kind: Service

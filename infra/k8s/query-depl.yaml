@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: query
-          image: xxxxxxxxx233/mini:query
+          image: xxxxxxxxx233/query
 ---
 apiVersion: v1
 kind: Service
