@@ -16,14 +16,14 @@ app.get('/posts', (req, res) => {
     res.send(posts);
 })
 
-app.post('/posts', async (req, res) => {
+app.post('/posts/create', async (req, res) => {
     const id = randomBytes(4).toString('hex');
     const title = req.body.title;
     posts[id] = {
         id,
         title
     }
-
+    console.log("Receive post!!!");
     await axios.post('http://event-bus-srv-clusterip:8088/events', {
         type: 'PostCreated',
         data: {
